@@ -10,7 +10,7 @@
         ./subscan exemple.com <option> <nomearquivo> <subdomains-words>
         
     Exemplo:
-        root@mysystem# ./subscan exemple.com --http filename
+        root@mysystem# ./subscan exemple.com --http filename wordlist
     
          --http          Buscar subdominios sem a segurança TLS.
     
