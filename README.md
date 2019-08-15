@@ -6,7 +6,7 @@
    <p> chmod +x subscan </p>
    
    <h3>Sintax basica:</h3>
-     <p>./subscan exemple.com <option> <nomearquivo> <subdomains-words> </p>
+     <p>./subscan exemple.com option nomearquivo subdomains-words </p>
        
     Exemplo:
         root@mysystem# ./subscan exemple.com --http filename
