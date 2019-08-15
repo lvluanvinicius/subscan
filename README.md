@@ -2,10 +2,9 @@
 
 Arquivo para teste de treinamento
  
- #Configurações:
-  git clone https://github.com/luanfatec/subscan.git
-  cd subscan/
-  chmod +x subscan
+#Configurações:
+
+ 
  
  #Sintaxe basica:
     ./subscan exemple.com <option> <nomearquivo> <subdomains-words>
