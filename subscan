@@ -25,7 +25,7 @@ help() {
     echo -e "\033[31;1m     ./subscan exemple.com <option> <nomearquivo> <subdomains-words>\033[00m"
     echo
     echo -e "\033[31;1m   Exemplo:"
-    echo -e "\033[31;1m     root@mysystem# ./subscan exemple.com --http filename\033[00m"
+    echo -e "\033[31;1m     root@mysystem# ./subscan exemple.com --http filename wordlist\033[00m"
     echo
     echo -e "\033[31;1m     --http          Buscar subdominios sem a segurança TLS.\033[00m"
     echo
