@@ -1,8 +1,12 @@
 #!/bin/bash
 #
-#
-#
-#
+# Licensed under GPLv3, see LICENSE for details
+# Name:		Subscan
+# Version:	0.1
+# Author:	Luan Santos
+# Date:		Agosto 2019
+# https://github.com/luanfatec/subscan/
+
 
 
 logo() {
@@ -18,10 +22,10 @@ logo() {
 
 help() {
     echo -e "\033[31;1m   Sintax basica:"
-    echo -e "\033[31;1m     ./subdomains exemple.com <option> <nomearquivo> <subdomains-words>\033[00m"
+    echo -e "\033[31;1m     ./subscan exemple.com <option> <nomearquivo> <subdomains-words>\033[00m"
     echo
     echo -e "\033[31;1m   Exemplo:"
-    echo -e "\033[31;1m     root@mysystem# ./subdomains exemple.com --http filename\033[00m"
+    echo -e "\033[31;1m     root@mysystem# ./subscan exemple.com --http filename\033[00m"
     echo
     echo -e "\033[31;1m     --http          Buscar subdominios sem a segurança TLS.\033[00m"
     echo
