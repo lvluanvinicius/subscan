@@ -8,6 +8,7 @@
      
     Sintaxe básica
         ./subscan exemple.com <option> <nomearquivo> <subdomains-words>
+        
     Exemplo:
         root@mysystem# ./subscan exemple.com --http filename
     
