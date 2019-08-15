@@ -48,11 +48,11 @@ http() {
         codigo=$(curl --write-out %{http_code} http://"$key".$d -s -o /dev/null)
         if test "$codigo" -ne 000; then
             if test "$codigo" -eq 200 ;then
-                typefile='success_'
+                typefile='-success'
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[32;1m$codigo Ok \e[00m"
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[32;1m$codigo Ok \e[00m" >> $filename$typefile.txt
             else
-                typefile='error_'
+                typefile='-error_'
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[31;1m$codigo No \e[00m"
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[31;1m$codigo No \e[00m" >> $filename$typefile.txt
             fi
@@ -71,11 +71,11 @@ https() {
         codigo=$(curl --write-out %{http_code} https://"$key".$d -s -o /dev/null)
         if test "$codigo" -ne 000; then
             if test "$codigo" -eq 200 ;then
-                typefile='success_'
+                typefile='-success'
                 echo -e "   https://$key.$d |-----| \e[32;1m$codigo Ok \e[00m"
                 echo -e "   https://$key.$d |-----| \e[32;1m$codigo Ok \e[00m" >> $filename$typefile.txt
             else
-                typefile='error_'
+                typefile='-error'
                 echo -e "   https://$key.$d |-----| \e[31;1m$codigo No \e[00m"
                 echo -e "   https://$key.$d |-----| \e[31;1m$codigo No \e[00m" >> $filename$typefile.txt
             fi
