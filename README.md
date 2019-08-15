@@ -1,13 +1,12 @@
-# subscan
-
-Arquivo para teste de treinamento
+<h2>Subscan</h2>
  
-#Configurações:
-
+<h3>Configurações: </h3>
+   <p> git clone https://github.com/luanfatec/subscan.git </p>
+   <p> cd subscan/ </p>
+   <p> chmod +x subscan </p>
  
- 
- #Sintaxe basica:
-    ./subscan exemple.com <option> <nomearquivo> <subdomains-words>
+ <h3>Sintaxe basica:</h3>
+   <p> ./subscan exemple.com <option> <nomearquivo> <subdomains-words> <p>
     
     Exemplo:
         root@mysystem# ./subscan exemple.com --http filename
