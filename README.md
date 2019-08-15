@@ -2,7 +2,7 @@
 
 Arquivo para teste de treinamento
 
- Sintaxe basica:"
+ Sintaxe basica:
     ./subscan exemple.com <option> <nomearquivo> <subdomains-words>
     
     Exemplo:
