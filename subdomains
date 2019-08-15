@@ -12,7 +12,7 @@ logo() {
     echo -e "  ============================                                                                         ============================"
     echo -e "       Data: \e[32;1m$(date +%F)\e[00m                                                                                       Hora: \e[32;1m$(date +%T)\e[00m     "
     echo -e "  ============================                                                                         ============================"
-	echo -e "\e[00m\n  ================================================================================================================================="
+	echo -e "\e[00m  ================================================================================================================================="
 	echo
 }
 
@@ -25,7 +25,7 @@ help() {
     echo
     echo -e "\033[31;1m     --http          Buscar subdominios sem a segurança TLS.\033[00m"
     echo
-    echo -e "\033[31;1m     --http          Buscar subdominios com a segurança TLS.\033[00m"
+    echo -e "\033[31;1m     --https          Buscar subdominios com a segurança TLS.\033[00m"
     echo
 
 }
@@ -44,11 +44,11 @@ http() {
         codigo=$(curl --write-out %{http_code} http://"$key".$d -s -o /dev/null)
         if test "$codigo" -ne 000; then
             if test "$codigo" -eq 200 ;then
-                typefile='200'
+                typefile='success_'
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[32;1m$codigo Ok \e[00m"
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[32;1m$codigo Ok \e[00m" >> $filename$typefile.txt
             else
-                typefile='error'
+                typefile='error_'
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[31;1m$codigo No \e[00m"
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[31;1m$codigo No \e[00m" >> $filename$typefile.txt
             fi
@@ -67,17 +67,18 @@ https() {
         codigo=$(curl --write-out %{http_code} https://"$key".$d -s -o /dev/null)
         if test "$codigo" -ne 000; then
             if test "$codigo" -eq 200 ;then
-                typefile='200'
+                typefile='success_'
                 echo -e "   https://$key.$d |-----| \e[32;1m$codigo Ok \e[00m"
                 echo -e "   https://$key.$d |-----| \e[32;1m$codigo Ok \e[00m" >> $filename$typefile.txt
             else
-                typefile='error'
+                typefile='error_'
                 echo -e "   https://$key.$d |-----| \e[31;1m$codigo No \e[00m"
                 echo -e "   https://$key.$d |-----| \e[31;1m$codigo No \e[00m" >> $filename$typefile.txt
             fi
         else
             continue
         fi
+	hora=$(date +%T)
 
     done
 }
