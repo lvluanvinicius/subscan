@@ -1,8 +1,13 @@
 # subscan
 
 Arquivo para teste de treinamento
-
- Sintaxe basica:
+ 
+ #Configurações:
+  git clone https://github.com/luanfatec/subscan.git
+  cd subscan/
+  chmod +x subscan
+ 
+ #Sintaxe basica:
     ./subscan exemple.com <option> <nomearquivo> <subdomains-words>
     
     Exemplo:
