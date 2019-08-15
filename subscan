@@ -52,7 +52,7 @@ http() {
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[32;1m$codigo Ok \e[00m"
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[32;1m$codigo Ok \e[00m" >> $filename$typefile.txt
             else
-                typefile='-error_'
+                typefile='-error'
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[31;1m$codigo No \e[00m"
                 echo -e "   [$(date +%T)] http://$key.$d |-----| \e[31;1m$codigo No \e[00m" >> $filename$typefile.txt
             fi
