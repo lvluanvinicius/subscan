@@ -87,27 +87,34 @@ https() {
     done
 }
 
-
-
-
-if [ -z "$d" -o -z "$p" ] ; then
+if ! hash curl 2>/dev/null ;then
     clear
-    logo
-    help
-else 
-    
-    if [ "$p" = "--https" ] ; then
-        clear
-        logo
-        https
-    elif [ "$p" = "--http" ] ; then
-        clear
-        logo
-        http
+    echo
+    echo -e "\n\e[31;1;5mFoi detectado que o sistema não possui os requerimentos necessários\npara a execução do subscan.\naguarde até que seja instalado.\e[00m\n"
+    sleep 3
+    apt-get install curl
+
+else
+
+    if [ -z "$d" -o -z "$p" ] ; then
+	clear
+	logo
+	help
     else
-        clear
-        logo
-        help
+
+	if [ "$p" = "--https" ] ; then
+	    clear
+	    logo
+	    https
+	elif [ "$p" = "--http" ] ; then
+	    clear
+	    logo
+	    http
+	else
+	    clear
+	    logo
+	    help
+	fi
     fi
 fi
 
