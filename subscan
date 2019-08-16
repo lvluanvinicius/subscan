@@ -93,28 +93,32 @@ if ! hash curl 2>/dev/null ;then
     echo -e "\n\e[31;1;5mFoi detectado que o sistema não possui os requerimentos necessários\npara a execução do subscan.\naguarde até que seja instalado.\e[00m\n"
     sleep 3
     apt-get install curl
+    if ! hash curl 2>/dev/null ;then
+        clear
+        echo -e "\n\e[31;1mAs dependências não puderam ser instaladas.\nVerifique se a conexão com a internet está estável, e execute outra vez.\nSe o erro persistir reporte o mesmo no github.\e[00m"
+        sleep 3
+        exit 0;
+    fi
+fi
 
+if [ -z "$d" -o -z "$p" ] ; then
+    clear
+    logo
+    help
 else
 
-    if [ -z "$d" -o -z "$p" ] ; then
-	clear
-	logo
-	help
+    if [ "$p" = "--https" ] ; then
+        clear
+        logo
+        https
+    elif [ "$p" = "--http" ] ; then
+        clear
+        logo
+        http
     else
-
-	if [ "$p" = "--https" ] ; then
-	    clear
-	    logo
-	    https
-	elif [ "$p" = "--http" ] ; then
-	    clear
-	    logo
-	    http
-	else
-	    clear
-	    logo
-	    help
-	fi
+        clear
+        logo
+        help
     fi
 fi
 
