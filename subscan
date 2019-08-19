@@ -22,10 +22,6 @@ logo() {
 }
 
 
-d=$1
-p=$2
-filename=$3
-wd=$4
 logo
 echo -ne "\e[33;1m    Informe o alvo (exemplo.com.br): \e[00m";read d
 echo -ne "\e[33;1m    Informe o tipo de protocolo (http ou https): \e[00m";read p
